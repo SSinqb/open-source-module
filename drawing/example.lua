@@ -15,7 +15,7 @@
 --[[https://docs.synapse.to/docs/reference/drawing_lib.html]]-- [[Drawing Library Example]]
 
 local drawingmod = loadstring(game:HttpGet("https://raw.githubusercontent.com/SSinqb/open-source-module/main/drawing.lua"))()
-_G.drawmod = drawingmod:new()
+_G.drawmod = drawingmod:new() -- this is needed
 
 local circle = drawingmod:create("Circle",{ Visible = true,NumSides = 64,Radius = 300,Filled = false,Position = Vector2.new(600,200) })
 -- drawingmod:hide()
