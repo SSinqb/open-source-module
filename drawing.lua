@@ -5,8 +5,6 @@ function drawingmod:new()
     return setmetatable({drawingstorage = {}},drawingmod)
 end
 
-local drawingtable = drawingmod:new()
-
 function drawingmod:create(Type,Properties)
     if typeof(Properties) == "table" then else print("Error: Properties is an table!") end
     local drawingitem = Drawing.new(Type)
@@ -20,10 +18,10 @@ function drawingmod:create(Type,Properties)
 end
 
 function drawingitem:deleteall()
-    for i = 1,#drawingtable do
-        drawingtable[i]:Remove()
+    for i = 1,#self.drawingstorage do
+        self.drawingstorage[i]:Remove()
     end
-    setmetatable(self.drawingtable,nil)
+    setmetatable(self.drawingstorage,nil)
 end
 
 return drawingmod
