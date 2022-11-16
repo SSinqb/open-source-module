@@ -17,7 +17,7 @@ function drawingmod:create(Type,Properties)
     return drawingitem
 end
 
-function drawing:hide()
+function drawingmod:hide()
     for i = 1, #self.drawingstorage do
         local drawingitem = self.drawingstorage[i]
         if drawingitem then
@@ -26,7 +26,7 @@ function drawing:hide()
     end
 end
 
-function drawingitem:deleteall()
+function drawingmod:deleteall()
     for i = 1,#self.drawingstorage do
         self.drawingstorage[i]:Remove()
     end
