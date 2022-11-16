@@ -12,14 +12,14 @@ function drawingmod:create(Type,Properties)
         drawingitem[i] = v
     end
     do
-        table.insert(self.drawingstorage,drawingitem)
+        table.insert(_G.drawmod,drawingitem)
     end
     return drawingitem
 end
 
 function drawingmod:hide()
-    for i = 1, #self.drawingstorage do
-        local drawingitem = self.drawingstorage[i]
+    for i = 1, #_G.drawmod do
+        local drawingitem = _G.drawmod[i]
         if drawingitem then
             drawingitem.Visible = false
         end
@@ -27,10 +27,10 @@ function drawingmod:hide()
 end
 
 function drawingmod:deleteall()
-    for i = 1,#self.drawingstorage do
-        self.drawingstorage[i]:Remove()
+    for i = 1,#_G.drawmod do
+        _G.drawmod[i]:Remove()
     end
-    setmetatable(self,nil)
+    setmetatable(_G.drawmod,nil)
 end
 
 return drawingmod
