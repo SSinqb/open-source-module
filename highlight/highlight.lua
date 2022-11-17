@@ -26,15 +26,6 @@ function highlightmodule:hide()
     end
 end
 
-function highlightmodule:show()
-    for i = 1, #_G.highlightmod do
-        local higlightitem = _G.highlightmod[i]
-        if higlightitem then
-            higlightitem.Enabled = true
-        end
-    end
-end
-
 function highlightmodule:deleteall()
     for i = 1,#_G.highlightmod do
         _G.highlightmod[i]:Remove()
