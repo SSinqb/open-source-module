@@ -26,6 +26,15 @@ function drawingmod:hide()
     end
 end
 
+function drawingmod:show()
+    for i = 1, #_G.drawmod do
+        local drawingitem = _G.drawmod[i]
+        if drawingitem then
+            drawingitem.Visible = true
+        end
+    end
+end
+
 function drawingmod:deleteall()
     for i = 1,#_G.drawmod do
         _G.drawmod[i]:Remove()
