@@ -1,6 +1,21 @@
-local drawingmod = loadstring(game:HttpGet("https://raw.githubusercontent.com/SSinqb/open-source-module/main/highlight/highlight.lua"))()
-_G.drawmod = drawingmod:new() -- this is needed
+--[[
+    weda's Drawing Module
+    Created on 11/16/22
+]]
 
-local circle = drawingmod:create(game.Players.LocalPlayer,{ Enabled = true})
--- drawingmod:hide()
--- drawingmod:deleteall()
+--[[
+    Drawing Module Functions : {
+        :new() -- makes a metatable for [highlightmod], put this on below the highlightmod loadstring. make a _G. variable for it named as "highlightmod"
+        :create(<string> Parent,{<properties>}) -- creates highlight yes yes
+        :hide() -- hides all current highlights used
+        :deleteall() -- deletes all current highlights used
+    }
+]]
+
+local highlightmod = loadstring(game:HttpGet("https://raw.githubusercontent.com/SSinqb/open-source-module/main/highlight/highlight.lua"))()
+_G.highlightmod = highlightmod:new() -- this is needed
+
+local highlight = highlightmod:create(game.Players.LocalPlayer,{ Enabled = true})
+
+-- highlightmod:hide()
+-- highlightmod:deleteall()
